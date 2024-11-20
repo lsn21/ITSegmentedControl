@@ -14,7 +14,7 @@ final public class ITSegmentedControl: UIControl {
     struct UIConfig {
         static let defaultSegmentsSpacing: CGFloat = 0
         static let defaultSegmentsCornerRadius: CGFloat = 10
-        static let margins = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        static var margins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     // MARK: - Public Properties
@@ -66,6 +66,7 @@ final public class ITSegmentedControl: UIControl {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.alwaysBounceHorizontal = false
+        scrollView.isScrollEnabled = false
         return scrollView
     }()
     
@@ -176,7 +177,7 @@ final public class ITSegmentedControl: UIControl {
     private func didSelect(segment: ITSegment) {
         viewModel.selectSegment(withTitle: segment.title)
         selectedSegmentDidUpdate()
-        scrollToVisibleSegments()
+//        scrollToVisibleSegments()
         sendActions(for: .valueChanged)
     }
     

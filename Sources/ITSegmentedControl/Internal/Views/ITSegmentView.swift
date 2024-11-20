@@ -10,12 +10,12 @@ import UIKit
 final class ITSegmentView: UIView {
     
     struct UIConfig {
-        static let edgeInsets: UIEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        static let edgeInsets: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         static let selectedIndicatorHeight: CGFloat = 1
         static let defaultSegmentFont: UIFont = UIFont.preferredFont(forTextStyle: .body, compatibleWith: .current)
-        static let backgroundColor: UIColor = .blue
-        static let spacing: CGFloat = 5
-        static let iconSize: CGSize = CGSize(width: 20, height: 20)
+        static let backgroundColor: UIColor = .clear
+        static let spacing: CGFloat = 4
+        static let iconSize: CGSize = CGSize(width: 40, height: 40)
     }
     
     // MARK: - Public Properties
@@ -94,7 +94,7 @@ final class ITSegmentView: UIView {
     
     private func populateData() {
         setupContentStackViewArrangedSubviews()
-        titleLabel.text = segmentViewModel.title
+//        titleLabel.text = segmentViewModel.title
         titleLabel.textColor = segmentViewModel.titleColor
         titleLabel.sizeToFit()
         imageView.image = segmentViewModel.image
